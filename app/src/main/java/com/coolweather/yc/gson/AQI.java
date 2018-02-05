@@ -1,4 +1,4 @@
-package com.coolweather.android.gson;
+package com.coolweather.yc.gson;
 
 /**
  * Created by LZC on 2018/2/1.
