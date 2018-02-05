@@ -27,6 +27,7 @@ import com.coolweather.yc.util.HttpUtil;
 import com.coolweather.yc.util.Utility;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -197,8 +198,10 @@ public class WeatherActivity extends AppCompatActivity {
 
     //处理并展示Weather实体类中的数据
     private void showWeatherInfo(Weather weather){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+      //  System.out.println(df.format(System.currentTimeMillis()));
         String cityName=weather.basic.cityName;
-        String updateTime = weather.basic.update.updateTime.split(" ")[1];
+        String updateTime = df.format(System.currentTimeMillis());   //weather.basic.update.updateTime.split(" ")[1];
         String degree=weather.now.temperature + "℃";
         String weatherInfo=weather.now.more.info;
         titleCity.setText(cityName);
